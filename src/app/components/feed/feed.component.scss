@@ -1,6 +1,4 @@
-@import "../../../assets/scss/variables.scss";
-
-.feeds {
+.feed {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -16,22 +14,8 @@
     padding: 2vh;
 
     &__item {
-      a {
-        color: $primary-text-color;
-        text-decoration: none;
-
-        &:hover {
-          color: $primary-text-color;
-          text-decoration: none;
-        }
-      }
-
       width: 100%;
       margin-bottom: 5vh;
-
-      @media (min-width: 768px) {
-        width: 45%;
-      }
 
       &__image {
         >img {

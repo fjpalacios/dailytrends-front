@@ -1,13 +1,15 @@
 <div class="feeds">
   <div class="feeds__content">
     <div class="feeds__content__item" *ngFor="let feed of feeds | async">
-      <div *ngIf="feed.image" class="feeds__content__item__image">
-        <img src="{{ feed.image }}" alt="{{ feed.title }}">
-      </div>
-      <div class="feeds__content__item__body">
-        <h2>{{ feed.title }}</h2>
-        <p>{{ feed.body | summarize }}</p>
-      </div>
+      <a [routerLink]="['/feed/' + feed._id]">
+        <div *ngIf="feed.image" class="feeds__content__item__image">
+          <img src="{{ feed.image }}" alt="{{ feed.title }}">
+        </div>
+        <div class="feeds__content__item__body">
+          <h2>{{ feed.title }}</h2>
+          <p>{{ feed.body | summarize }}</p>
+        </div>
+      </a>
     </div>
   </div>
 </div>

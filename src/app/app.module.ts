@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FeedsComponent } from './components/feeds/feeds.component';
 import { HtmlPipe } from './pipes/html.pipe';
 import { SummarizePipe } from './pipes/summarize.pipe';
+import { FeedComponent } from './components/feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SummarizePipe } from './pipes/summarize.pipe';
     NavbarComponent,
     FeedsComponent,
     HtmlPipe,
-    SummarizePipe
+    SummarizePipe,
+    FeedComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { Feed } from './../../models/feed';
 import { FeedService } from './../../services/feed.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class FeedsComponent implements OnInit {
 
-  feeds: Observable<any>;
+  feeds: Observable<Feed>;
 
   constructor(private feedService: FeedService) { }
 

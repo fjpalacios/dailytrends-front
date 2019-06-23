@@ -1,0 +1,13 @@
+<div class="feed">
+  <div class="feed__content">
+    <div class="feed__content__item">
+      <div *ngIf="article?.image" class="feed__content__item__image">
+        <img src="{{ article?.image }}" alt="{{ article?.title }}">
+      </div>
+      <div class="feed__content__item__body">
+        <h2>{{ article?.title }}</h2>
+        <p [innerHTML]="article?.body | html"></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+@import "../../../assets/scss/variables.scss";
+
+@font-face {
+  font-family: chomsky;
+  src: url('/assets/fonts/Chomsky.otf') format("opentype");
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1vh 1vh 3vh 1vh;
+
+  &__logo {
+    width: 90%;
+
+    h1 {
+      font-family: chomsky;
+      font-size: 50px;
+      font-weight: 200;
+      margin: 0;
+      padding-bottom: 5px;
+      text-align: center;
+      border-bottom: 2px solid $primary-text-color;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    width: 90%;
+    margin-top: 3px;
+
+    &__item {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: bold;
+      color: $link-text-color;
+      transition: all .2s ease;
+
+      &--active {
+        color: $link-active-text-color;
+      }
+
+      &:hover {
+        color: $link-hover-text-color;
+        transition: all .2s ease;
+      }
+    }
+  }
+}

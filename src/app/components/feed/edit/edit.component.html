@@ -1,0 +1,46 @@
+<div class="form">
+  <div class="form__content">
+    <form [formGroup]="feed" (ngSubmit)="onSendForm()">
+      <label for="title" class="form__content__label">Título</label>
+      <input type="text" formControlName="title" class="form__content__input" required />
+      <div class="form__content__alert" *ngIf="title.invalid && (title.dirty || title.touched)">
+        <div class="form__content__alert__message" *ngIf="title.errors.required">
+          El campo título es requerido
+        </div>
+        <div class="form__content__alert__message" *ngIf="title.errors.minlength">
+          El campo título debe tener más de 10 caracteres
+        </div>
+      </div>
+      <label for="image" class="form__content__label">Imagen</label>
+      <input type="text" formControlName="image" class="form__content__input" />
+      <label for="source" class="form__content__label">Fuente</label>
+      <input type="text" formControlName="source" class="form__content__input" required />
+      <div class="form__content__alert" *ngIf="source.invalid && (source.dirty || source.touched)">
+        <div class="form__content__alert__message" *ngIf="source.errors.required">
+          El campo fuente es requerido
+        </div>
+        <div class="form__content__alert__message" *ngIf="source.errors.minlength">
+          El campo fuente debe tener más de 5 caracteres
+        </div>
+      </div>
+      <label for="publisher" class="form__content__label">Periodista</label>
+      <input type="text" formControlName="publisher" class="form__content__input" required />
+      <div class="form__content__alert" *ngIf="publisher.invalid && (publisher.dirty || publisher.touched)">
+        <div class="form__content__alert__message" *ngIf="publisher.errors.required">
+          El campo periodista es requerido
+        </div>
+        <div class="form__content__alert__message" *ngIf="publisher.errors.minlength">
+          El campo periodista debe tener más de 5 caracteres
+        </div>
+      </div>
+      <label for="body" class="form__content__label">Artículo</label>
+      <textarea formControlName="body" class="form__content__textarea" required></textarea>
+      <div class="form__content__alert" *ngIf="body.invalid && (body.dirty || body.touched)">
+        <div class="form__content__alert__message" *ngIf="body.errors.required">
+          El campo artículo es requerido
+        </div>
+      </div>
+      <input type="submit" value="Actualizar" class="button button--send" [disabled]="!feed.valid">
+    </form>
+  </div>
+</div>

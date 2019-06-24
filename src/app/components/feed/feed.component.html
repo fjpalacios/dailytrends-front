@@ -1,6 +1,10 @@
 <div class="feed">
   <div class="feed__content">
     <div class="feed__content__item">
+      <div class="feed__content__item__actions">
+        <a [routerLink]="['/feed/' + article?._id + '/edit']" class=" button button--edit">Editar</a>
+        <a [routerLink]="['/feed/' + article?._id + '/delete']" class=" button button--delete">Eliminar</a>
+      </div>
       <div *ngIf="article?.image" class="feed__content__item__image">
         <img src="{{ article?.image }}" alt="{{ article?.title }}">
       </div>

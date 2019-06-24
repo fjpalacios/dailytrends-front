@@ -1,3 +1,5 @@
+@import "../../../assets/scss/variables.scss";
+
 .feed {
   display: flex;
   flex-direction: row;
@@ -17,11 +19,44 @@
       width: 100%;
       margin-bottom: 5vh;
 
+      &__actions {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+
       &__image {
         >img {
           width: 100%;
         }
       }
+    }
+  }
+}
+
+.button {
+  padding: 10px;
+  color: $button-text-color;
+  text-decoration: none;
+
+  &--edit {
+    background-color: $button-edit-background-color;
+    transition: all 1s ease;
+
+    &:hover {
+      background-color: $button-edit-hover-background-color;
+      transition: all 1s ease;
+    }
+  }
+
+  &--delete {
+    background-color: $button-delete-background-color;
+    transition: all 1s ease;
+
+    &:hover {
+      background-color: $button-delete-hover-background-color;
+      transition: all 1s ease;
     }
   }
 }

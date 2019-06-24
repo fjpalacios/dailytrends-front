@@ -10,6 +10,8 @@ import { FeedsComponent } from './components/feeds/feeds.component';
 import { HtmlPipe } from './pipes/html.pipe';
 import { SummarizePipe } from './pipes/summarize.pipe';
 import { FeedComponent } from './components/feed/feed.component';
+import { EditComponent } from './components/feed/edit/edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { FeedComponent } from './components/feed/feed.component';
     FeedsComponent,
     HtmlPipe,
     SummarizePipe,
-    FeedComponent
+    FeedComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

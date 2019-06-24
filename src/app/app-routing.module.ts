@@ -2,11 +2,13 @@ import { FeedComponent } from './components/feed/feed.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FeedsComponent } from './components/feeds/feeds.component';
+import { EditComponent } from './components/feed/edit/edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/feeds', pathMatch: 'full' },
   { path: 'feeds', component: FeedsComponent },
   { path: 'feed/:id', component: FeedComponent },
+  { path: 'feed/:id/edit', component: EditComponent },
   { path: '**', component: FeedsComponent }
 ];
 

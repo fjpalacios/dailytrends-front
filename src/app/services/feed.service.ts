@@ -1,7 +1,7 @@
 import { Feed } from './../models/feed';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -19,5 +19,13 @@ export class FeedService {
   getOne(id: string): Observable<Feed> {
     return this.http.get<Feed>(`${this.URL_API}${id}`)
       .pipe(map((data: any) => data.feed));
+  }
+
+  update(id: string, feed: Feed): void {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    this.http.put(`${this.URL_API}${id}`, { feed }, httpOptions)
+      .subscribe((res: Response) => console.log);
   }
 }

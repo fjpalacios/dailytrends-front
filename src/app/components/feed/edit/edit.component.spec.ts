@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditComponent } from './edit.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -12,7 +11,7 @@ describe('EditComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EditComponent],
-      imports: [HttpClientModule, RouterTestingModule, ReactiveFormsModule]
+      imports: [HttpClientModule, ReactiveFormsModule]
     })
     .compileComponents();
   }));

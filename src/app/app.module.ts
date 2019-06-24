@@ -12,6 +12,7 @@ import { SummarizePipe } from './pipes/summarize.pipe';
 import { FeedComponent } from './components/feed/feed.component';
 import { EditComponent } from './components/feed/edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateComponent } from './components/feed/create/create.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HtmlPipe,
     SummarizePipe,
     FeedComponent,
-    EditComponent
+    EditComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,16 @@ export class FeedService {
   private URL_API = 'http://localhost:3000/api/v1/feed/';
   constructor(private http: HttpClient, private router: Router) { }
 
+  create(feed: Feed): void {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    this.http.post(`${this.URL_API}`, { feed }, httpOptions)
+      .subscribe((res) => {
+        this.router.navigate(['/feed', res.id]);
+      });
+  }
+
   getAll(): Observable<Feed[]> {
     return this.http.get<Feed[]>(this.URL_API)
       .pipe(map((data: any) => data.feeds));

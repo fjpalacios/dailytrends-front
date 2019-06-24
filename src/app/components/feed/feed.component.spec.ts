@@ -3,7 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FeedComponent } from './feed.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterTestingModule } from '@angular/router/testing';
 
 describe('FeedComponent', () => {
   let component: FeedComponent;
@@ -12,7 +11,7 @@ describe('FeedComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [FeedComponent, HtmlPipe],
-      imports: [HttpClientModule, RouterTestingModule]
+      imports: [HttpClientModule]
     })
     .compileComponents();
   }));

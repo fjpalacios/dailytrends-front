@@ -1,3 +1,4 @@
+import { CreateComponent } from './components/feed/create/create.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: 'feeds', component: FeedsComponent },
   { path: 'feed/:id', component: FeedComponent },
   { path: 'feed/:id/edit', component: EditComponent },
+  { path: 'create', component: CreateComponent },
   { path: '**', component: FeedsComponent }
 ];
 

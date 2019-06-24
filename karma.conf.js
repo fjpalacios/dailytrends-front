@@ -23,7 +23,7 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/dailytrends'),
-      reports: ['html', 'lcovonly', 'text-summary'],
+      reports: ['text'],
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml'],

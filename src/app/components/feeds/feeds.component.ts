@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class FeedsComponent implements OnInit {
 
-  feeds: Observable<Feed>;
+  feeds: Observable<Feed[]>;
 
   constructor(private feedService: FeedService) { }
 

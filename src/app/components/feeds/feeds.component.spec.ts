@@ -1,4 +1,4 @@
-import { HtmlPipe } from './../../pipes/html.pipe';
+import { RouterModule } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FeedsComponent } from './feeds.component';
@@ -11,8 +11,8 @@ describe('FeedsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FeedsComponent, HtmlPipe, SummarizePipe],
-      imports: [HttpClientModule]
+      declarations: [FeedsComponent, SummarizePipe],
+      imports: [HttpClientModule, RouterModule]
     })
     .compileComponents();
   }));

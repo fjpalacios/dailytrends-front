@@ -32,6 +32,11 @@ export class FeedService {
       .pipe(map((data: any) => data.feed));
   }
 
+  getLatest(): Observable<Feed[]> {
+    return this.http.get<Feed[]>(`${this.URL_API}latest`)
+      .pipe(map((data: any) => data.feeds));
+  }
+
   update(id: string, feed: Feed): void {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })

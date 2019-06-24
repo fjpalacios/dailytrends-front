@@ -1,6 +1,8 @@
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import es from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +15,8 @@ import { FeedComponent } from './components/feed/feed.component';
 import { EditComponent } from './components/feed/edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateComponent } from './components/feed/create/create.component';
+
+registerLocaleData(es);
 
 @NgModule({
   declarations: [
@@ -32,7 +36,9 @@ import { CreateComponent } from './components/feed/create/create.component';
     RouterModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

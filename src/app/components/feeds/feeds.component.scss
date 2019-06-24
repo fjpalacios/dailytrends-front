@@ -7,13 +7,21 @@
   justify-content: center;
   align-items: stretch;
 
-  &__content {
+  &__content,
+  &__alternative__content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 90%;
     padding: 2vh;
+    border-bottom: 2px solid $primary-text-color;
+
+    &::after {
+      content: "";
+      flex: 1 1 100%;
+      max-width: 32%;
+    }
 
     &__item {
       a {
@@ -40,7 +48,18 @@
       &__image {
         >img {
           width: 100%;
+          max-height: 223px;
         }
+      }
+    }
+  }
+
+  &__alternative {
+    &__content {
+      h2 {
+        display: block;
+        width: 100%;
+        margin-bottom: 3vh;
       }
     }
   }

@@ -1,7 +1,8 @@
+import { map } from 'rxjs/operators';
 import { Feed } from './../../models/feed';
 import { FeedService } from './../../services/feed.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { filter } from 'minimatch';
 
 @Component({
   selector: 'dt-feeds',
@@ -10,12 +11,18 @@ import { Observable } from 'rxjs';
 })
 export class FeedsComponent implements OnInit {
 
-  feeds: Observable<Feed[]>;
+  feeds: Feed[];
+  feedsWithoutImages: Feed[];
 
   constructor(private feedService: FeedService) { }
 
   ngOnInit() {
-    this.feeds = this.feedService.getAll();
+    this.feedService.getAll().pipe(
+      map(feeds => feeds.filter((feed: Feed) => feed.image !== ''))
+    ).subscribe((feeds: Feed[]) => this.feeds = feeds);
+    this.feedService.getAll().pipe(
+      map(feeds => feeds.filter((feed: Feed) => feed.image === ''))
+    ).subscribe((feeds: Feed[]) => this.feedsWithoutImages = feeds);
   }
 
 }

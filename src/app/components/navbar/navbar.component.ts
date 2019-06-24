@@ -7,4 +7,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent {
   title = 'DailyTrends';
+  date = Date.now();
 }

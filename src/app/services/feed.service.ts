@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FeedService {
   private URL_API = 'http://localhost:3000/api/v1/feed/';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   getAll(): Observable<Feed[]> {
     return this.http.get<Feed[]>(this.URL_API)
@@ -26,6 +27,15 @@ export class FeedService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     this.http.put(`${this.URL_API}${id}`, { feed }, httpOptions)
-      .subscribe((res: Response) => console.log);
+      .subscribe((res: Response) => {
+        this.router.navigate(['/feed', id]);
+      });
+  }
+
+  delete(id: string): void {
+    this.http.delete(`${this.URL_API}${id}`)
+      .subscribe((res: Response) => {
+        this.router.navigate(['/feeds']);
+      });
   }
 }

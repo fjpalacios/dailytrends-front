@@ -15,7 +15,6 @@ export class FeedComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private feedService: FeedService
   ) { }
 
@@ -26,6 +25,13 @@ export class FeedComponent implements OnInit {
     this.feedService.getOne(this.id).subscribe(data => {
       this.article = data;
     });
+  }
+
+  onDelete(event: any) {
+    event.preventDefault();
+    if (confirm('¿Realmente quieres borrar este artículo?')) {
+      this.feedService.delete(this.id);
+    }
   }
 
 }

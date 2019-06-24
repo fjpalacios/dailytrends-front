@@ -17,7 +17,6 @@ export class EditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private feedService: FeedService
   ) {
     this.feed = this.createFormGroup();
@@ -56,7 +55,6 @@ export class EditComponent implements OnInit {
   onSendForm() {
     if (this.feed.valid) {
       this.feedService.update(this.id, this.feed.value);
-      this.router.navigate(['/feed', this.id]);
     }
   }
 

@@ -15,6 +15,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { EditComponent } from './components/feed/edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateComponent } from './components/feed/create/create.component';
+import { ElMundoComponent } from './components/feed/el-mundo/el-mundo.component';
 
 registerLocaleData(es);
 
@@ -27,7 +28,8 @@ registerLocaleData(es);
     SummarizePipe,
     FeedComponent,
     EditComponent,
-    CreateComponent
+    CreateComponent,
+    ElMundoComponent
   ],
   imports: [
     BrowserModule,

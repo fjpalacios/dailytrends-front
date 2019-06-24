@@ -4,11 +4,11 @@ import { FeedService } from 'src/app/services/feed.service';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'dt-el-mundo',
-  templateUrl: './el-mundo.component.html',
-  styleUrls: ['./el-mundo.component.scss']
+  selector: 'dt-el-pais',
+  templateUrl: './el-pais.component.html',
+  styleUrls: ['./el-pais.component.scss']
 })
-export class ElMundoComponent implements OnInit {
+export class ElPaisComponent implements OnInit {
 
   feeds: Feed[];
   feedsWithoutImages: Feed[];
@@ -17,10 +17,10 @@ export class ElMundoComponent implements OnInit {
 
   ngOnInit() {
     this.feedService.getAll().pipe(
-      map(feeds => feeds.filter((feed: Feed) => feed.image !== '' && feed.source === 'El Mundo'))
+      map(feeds => feeds.filter((feed: Feed) => feed.image !== '' && feed.source === 'El País'))
     ).subscribe((feeds: Feed[]) => this.feeds = feeds);
     this.feedService.getAll().pipe(
-      map(feeds => feeds.filter((feed: Feed) => feed.image === '' && feed.source === 'El Mundo'))
+      map(feeds => feeds.filter((feed: Feed) => feed.image === '' && feed.source === 'El País'))
     ).subscribe((feeds: Feed[]) => this.feedsWithoutImages = feeds);
   }
 

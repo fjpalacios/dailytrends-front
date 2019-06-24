@@ -1,3 +1,4 @@
+import { ElPaisComponent } from './components/feed/el-pais/el-pais.component';
 import { ElMundoComponent } from './components/feed/el-mundo/el-mundo.component';
 import { CreateComponent } from './components/feed/create/create.component';
 import { FeedComponent } from './components/feed/feed.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'feed/:id/edit', component: EditComponent },
   { path: 'create', component: CreateComponent },
   { path: 'el-mundo', component: ElMundoComponent },
+  { path: 'el-pais', component: ElPaisComponent },
   { path: '**', component: FeedsComponent }
 ];
 

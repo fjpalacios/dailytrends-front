@@ -1,7 +1,12 @@
 # Dailytrends Frontend
-**Work in progress**
 
 This is the frontend of the DailyTrends application, a digital newspaper that allows you to view the cover articles of the two most important newspapers in Spain.
+
+## FAQ
+* Why are there two different sections of news?
+  * There are some news that come with a picture and others without it, I found horrible to distribute all of them in the same space.
+* What do the 'El Mundo' and 'El País' sections have?
+  * The main page has only the latest 5 news. Every 30 minutes the backend stores new news, so I think it's a shame to miss that. In these sections you can access the full content of each newspaper.
 
 ## Requirements
 * [Docker](https://www.docker.com/get-started)

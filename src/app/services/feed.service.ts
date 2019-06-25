@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Response } from '../models/response';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class FeedService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     this.http.post(`${this.URL_API}`, { feed }, httpOptions)
-      .subscribe((res) => {
+      .subscribe((res: Response) => {
         this.router.navigate(['/feed', res.id]);
       });
   }

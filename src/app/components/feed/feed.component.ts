@@ -19,12 +19,15 @@ export class FeedComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
-      this.id = params.id;
-    });
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.id = params.id;
+      },
+      err => console.log
+    );
     this.feedService.getOne(this.id).subscribe(data => {
       this.article = data;
-    });
+    }, err => console.log);
   }
 
   onDelete(event: any) {

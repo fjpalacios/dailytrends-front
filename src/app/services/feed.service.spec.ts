@@ -3,11 +3,12 @@ import { TestBed } from '@angular/core/testing';
 import { FeedService } from './feed.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Feed } from '../models/feed';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('FeedService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule]
+      imports: [HttpClientModule, RouterTestingModule]
     });
   });
 

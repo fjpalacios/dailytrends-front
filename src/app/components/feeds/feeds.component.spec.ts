@@ -1,9 +1,9 @@
-import { RouterModule } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FeedsComponent } from './feeds.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SummarizePipe } from 'src/app/pipes/summarize.pipe';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('FeedsComponent', () => {
   let component: FeedsComponent;
@@ -12,9 +12,8 @@ describe('FeedsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [FeedsComponent, SummarizePipe],
-      imports: [HttpClientModule, RouterModule]
-    })
-    .compileComponents();
+      imports: [HttpClientModule, RouterTestingModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

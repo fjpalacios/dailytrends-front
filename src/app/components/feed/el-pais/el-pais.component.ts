@@ -16,12 +16,32 @@ export class ElPaisComponent implements OnInit {
   constructor(private feedService: FeedService) { }
 
   ngOnInit() {
-    this.feedService.getAll().pipe(
-      map(feeds => feeds.filter((feed: Feed) => feed.image !== '' && feed.source === 'El País'))
-    ).subscribe((feeds: Feed[]) => this.feeds = feeds);
-    this.feedService.getAll().pipe(
-      map(feeds => feeds.filter((feed: Feed) => feed.image === '' && feed.source === 'El País'))
-    ).subscribe((feeds: Feed[]) => this.feedsWithoutImages = feeds);
+    this.feedService
+      .getAll()
+      .pipe(
+        map(feeds =>
+          feeds.filter(
+            (feed: Feed) => feed.image !== '' && feed.source === 'El País'
+          )
+        )
+      )
+      .subscribe(
+        (feeds: Feed[]) => (this.feeds = feeds),
+        err => console.log
+      );
+    this.feedService
+      .getAll()
+      .pipe(
+        map(feeds =>
+          feeds.filter(
+            (feed: Feed) => feed.image === '' && feed.source === 'El País'
+          )
+        )
+      )
+      .subscribe(
+        (feeds: Feed[]) => (this.feedsWithoutImages = feeds),
+        err => console.log
+      );
   }
 
 }

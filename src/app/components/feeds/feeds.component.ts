@@ -17,12 +17,20 @@ export class FeedsComponent implements OnInit {
   constructor(private feedService: FeedService) { }
 
   ngOnInit() {
-    this.feedService.getLatest().pipe(
-      map(feeds => feeds.filter((feed: Feed) => feed.image !== ''))
-    ).subscribe((feeds: Feed[]) => this.feeds = feeds);
-    this.feedService.getLatest().pipe(
-      map(feeds => feeds.filter((feed: Feed) => feed.image === ''))
-    ).subscribe((feeds: Feed[]) => this.feedsWithoutImages = feeds);
+    this.feedService
+      .getLatest()
+      .pipe(map(feeds => feeds.filter((feed: Feed) => feed.image !== '')))
+      .subscribe(
+        (feeds: Feed[]) => (this.feeds = feeds),
+        err => console.log
+      );
+    this.feedService
+      .getLatest()
+      .pipe(map(feeds => feeds.filter((feed: Feed) => feed.image === '')))
+      .subscribe(
+        (feeds: Feed[]) => (this.feedsWithoutImages = feeds),
+        err => console.log
+      );
   }
 
 }

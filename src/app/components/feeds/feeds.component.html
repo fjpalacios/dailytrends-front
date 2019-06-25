@@ -12,7 +12,7 @@
       </a>
     </div>
   </div>
-  <div class="feeds__alternative__content">
+  <div class="feeds__alternative__content" *ngIf="feedsWithoutImages?.length > 0">
     <h2>Otras noticias de interés</h2>
     <div class="feeds__alternative__content__item" *ngFor="let feed of feedsWithoutImages">
       <div class="feeds__alternative__content__item__body">

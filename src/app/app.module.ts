@@ -37,7 +37,7 @@ registerLocaleData(es);
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule,
+    RouterModule.forRoot([]),
     ReactiveFormsModule
   ],
   providers: [

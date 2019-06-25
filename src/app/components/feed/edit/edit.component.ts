@@ -26,10 +26,13 @@ export class EditComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.id = params.id;
     });
-    this.feedService.getOne(this.id).subscribe(data => {
-      this.article = data;
-      this.updateForm();
-    });
+    this.feedService.getOne(this.id).subscribe(
+      data => {
+        this.article = data;
+        this.updateForm();
+      },
+      err => console.log
+    );
   }
 
   createFormGroup() {
